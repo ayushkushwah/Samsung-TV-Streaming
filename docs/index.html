@@ -35,10 +35,7 @@
 
             player.play();
             document.body.focus();
-            
-            alertx("started");
 
-            window.onkeydown = function(e) {
             document.addEventListener("mousedown", function (e) {
                 if (e.keyCode) {
                     alertx(e.keyCode);
@@ -57,7 +54,6 @@
                     }
                 }
             });
-        };
         }
     </script>
 </body>
