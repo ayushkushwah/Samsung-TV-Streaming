@@ -15,12 +15,18 @@
 </head>
 
 <body>
+    <p id="alert-block"></p>
+    
     <video id=example-video class="video-js vjs-default-skin" controls requestFullScreen>
         <source src="https://atcdnhttps.r.worldssl.net/at-origin/liveabr/playlist.m3u8" type="application/x-mpegURL">
     </video>
 
     <script>
         window.onload = function () {
+            function alertx(s)
+            {
+                   document.getElementById('alert-block').innerHTML = s;
+            }
             window.onload = function()
         {
               document.body.focus();
@@ -28,6 +34,7 @@
         window.onkeydown = function(e) {
             document.addEventListener("keydown", function (e) {
                 if (e.keyCode) {
+                    alertx(e.keyCode);
                     if (elem.requestFullscreen) {
                         elem.requestFullscreen();
                     } else if (elem.mozRequestFullScreen) {
