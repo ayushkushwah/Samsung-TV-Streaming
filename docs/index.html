@@ -26,8 +26,6 @@
                document.getElementById('alert-block').innerHTML = s;
         }
         window.onload = function () {
-            var elem = document.getElementById("example-video");
-
             var blobURL = "blob:https://feeds.intoday.in/5726bb87-c9f9-41e9-b092-c2c25ea557a3";
             var player = videojs('example-video');
 
@@ -42,6 +40,7 @@
             document.addEventListener("keydown", function (e) {
                 if (e.keyCode) {
                     alertx(e.keyCode);
+                    var elem = document.getElementById("example-video");
                     if (elem.requestFullscreen) {
                         elem.requestFullscreen();
                     } else if (elem.mozRequestFullScreen) {
