@@ -1,55 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
-        <!-- ie 8 -->
-        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-    </head>
-  <body>
-    <video id=example-video  class="video-js vjs-default-skin" controls requestFullScreen >
-        <source
-            src="https://atcdnhttps.r.worldssl.net/at-origin/liveabr/playlist.m3u8"
-            type="application/x-mpegURL">
-    </video>
-    
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Canvas Clock - Canvas API Tutorial" />
+
+    <title>Stream</title>
+    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
+
     <script src='https://cdnjs.cloudflare.com/ajax/libs/video.js/7.7.5/video.min.js'></script>
-    
+
+</head>
+
+<body>
+    <video id=example-video class="video-js vjs-default-skin" controls requestFullScreen>
+        <source src="https://atcdnhttps.r.worldssl.net/at-origin/liveabr/playlist.m3u8" type="application/x-mpegURL">
+    </video>
+
     <script>
+        window.onload = function () {
+            document.addEventListener("keydown", function (e) {
+                if (e.keyCode) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        /* Firefox */
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        /* Chrome, Safari & Opera */
+                        elem.webkitRequestFullscreen();
+                    } else if (elem.msRequestFullscreen) {
+                        /* IE/Edge */
+                        elem.msRequestFullscreen();
+                    }
+                }
+            });
+        };
+
+        var elem = document.getElementById("example-video");
+
         var blobURL = "blob:https://feeds.intoday.in/5726bb87-c9f9-41e9-b092-c2c25ea557a3";
         var player = videojs('example-video');
-        
+
         const mediaStream = new MediaStream();
         const video = document.getElementById('example-video');
         video.srcObject = mediaStream;
 
         player.play();
     </script>
-  </body>
-  
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script>
-        document.write("Script Enabled");
-    </script>
-    <noscript>
-        <head>
-            <meta http-equiv="refresh" content="0.1;url=index.html"/>
-        </head>
-    </noscript>
-</head>
-<body>
-    <p>
-        Main content
-    </p>
 </body>
-</html> -->
+
+</html>
