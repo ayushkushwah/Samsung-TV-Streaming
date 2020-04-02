@@ -22,14 +22,22 @@
     </video>
 
     <script>
+        function alertx(s) {
+               document.getElementById('alert-block').innerHTML = s;
+        }
         window.onload = function () {
-            function alertx(s)
-            {
-                   document.getElementById('alert-block').innerHTML = s;
-            }
-            window.onload = function()
-        {
-              document.body.focus();
+            var elem = document.getElementById("example-video");
+
+            var blobURL = "blob:https://feeds.intoday.in/5726bb87-c9f9-41e9-b092-c2c25ea557a3";
+            var player = videojs('example-video');
+
+            const mediaStream = new MediaStream();
+            const video = document.getElementById('example-video');
+            video.srcObject = mediaStream;
+
+            player.play();
+            document.body.focus();
+
         }
         window.onkeydown = function(e) {
             document.addEventListener("keydown", function (e) {
@@ -51,16 +59,6 @@
             });
         };
 
-        var elem = document.getElementById("example-video");
-
-        var blobURL = "blob:https://feeds.intoday.in/5726bb87-c9f9-41e9-b092-c2c25ea557a3";
-        var player = videojs('example-video');
-
-        const mediaStream = new MediaStream();
-        const video = document.getElementById('example-video');
-        video.srcObject = mediaStream;
-
-        player.play();
     </script>
 </body>
 
