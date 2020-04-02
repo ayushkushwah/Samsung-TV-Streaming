@@ -35,9 +35,11 @@
 
             player.play();
             document.body.focus();
+            
+            alertx("started");
 
             window.onkeydown = function(e) {
-            document.addEventListener("keydown", function (e) {
+            document.addEventListener("mousedown", function (e) {
                 if (e.keyCode) {
                     alertx(e.keyCode);
                     var elem = document.getElementById("example-video");
