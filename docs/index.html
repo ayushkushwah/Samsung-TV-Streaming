@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="Canvas Clock - Canvas API Tutorial" />
+    
 
     <title>Stream</title>
     <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet" />
@@ -20,6 +21,11 @@
 
     <script>
         window.onload = function () {
+            window.onload = function()
+        {
+              document.body.focus();
+        }
+        window.onkeydown = function(e) {
             document.addEventListener("keydown", function (e) {
                 if (e.keyCode) {
                     if (elem.requestFullscreen) {
